@@ -54,7 +54,7 @@ export default function CampusSelectScreen() {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1, //画面全体を使う
-        backgroundColor: '#F5F5F7', //背景色をグレーに
+        backgroundColor: '#F5F5F7', 
     },
     container: {
         flex: 1,
