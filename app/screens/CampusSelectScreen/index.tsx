@@ -19,8 +19,8 @@ export default function CampusSelectScreen() {
     return (
         <SafeAreaView style={styles.wrapper}>
             <View style={styles.container}>
-                <Text style={styles.title}>ようこそ Mealware へ！</Text>
-                <Text style={styles.subtitle}>所属キャンパスを選択してください</Text>
+                <Text style={styles.title}>Mealware(仮)</Text>
+                <Text style={styles.subtitle}>あなたの所属キャンパスを選択してください</Text>
 
                 {/* 天白ボタン */}
                 <TouchableOpacity

@@ -12,38 +12,50 @@ export default function RootLayout() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
+        // バックボタンの文字を統一
+        headerBackTitle: '戻る', 
       }}
     >
       {/* (tabs) フォルダはヘッダーなし */}
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
       {/* 
-        ここから下の name が最も重要なポイントです。
-        ファイル構造が "app/screens/〇〇Screen/index.tsx" の場合、
-        ルーターが認識する名前は "screens/〇〇Screen" となります。
+        修正ポイント
+        一番最初の画面（app/index.tsx）に対する設定を追加しました。
+      */}
+
+      <Stack.Screen 
+        name="index" 
+        options={{ title: 'Mealware' }} 
+      />
+
+      {/* 
+        修正ポイント:
+        ファイルが "app/screens/〇〇/index.tsx" の場合、
+        name に "/index" まで明記することで確実に紐づけます。
       */}
       <Stack.Screen
-        name="screens/CampusSelectScreen" // これが "app/screens/CampusSelectScreen/index.tsx" を指します
+        name="screens/CampusSelectScreen/index" 
         options={{ title: 'Mealware' }}
       />
       <Stack.Screen
-        name="screens/DiagnosisSelectScreen"
+        name="screens/DiagnosisSelectScreen/index"
         options={{ title: '診断方法を選択' }}
       />
        <Stack.Screen
-        name="screens/GenreDiagnosisScreen"
+        name="screens/GenreDiagnosisScreen/index"
         options={{ title: '料理ジャンル診断' }}
       />
       <Stack.Screen
-        name="screens/CompatibilityDiagnosisScreen"
+        name="screens/CompatibilityDiagnosisScreen/index"
         options={{ title: '相性診断' }}
       />
       <Stack.Screen
-        name="screens/MbtiDiagnosisScreen"
+        name="screens/MbtiDiagnosisScreen/index"
         options={{ title: 'MBTIで診断' }}
       />
       <Stack.Screen
-        name="screens/ResultScreen"
+        name="screens/ResultScreen/index"
         options={{ title: '診断結果' }}
       />
     </Stack>

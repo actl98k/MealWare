@@ -14,7 +14,7 @@ const DiagnosisSelectScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{campus}キャンパス</Text>
+      <Text style={styles.title}>{campus}キャンパス周辺グルメを提案します！</Text>
       <Text style={styles.subtitle}>診断方法を選んでください</Text>
 
       <TouchableOpacity style={styles.button} onPress={() => handleNavigate('/screens/GenreDiagnosisScreen')}>
