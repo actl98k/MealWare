@@ -5,15 +5,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 
 export default function CampusSelectScreen() {
-    // useRouter は画面を移動するための関数を返す
-    //const router = useRouter();
-
     // キャンパスを押したときに diagnose 画面へ移動
     const handleSelectCampus = (campus: string) => {
         router.push({
             pathname: '/screens/DiagnosisSelectScreen',
             params: { campus }, // diagnose 画面にデータを渡す
         });
+    };
+
+    // ▼▼▼ 追加：保存リスト画面へ移動する機能 ▼▼▼
+    const handleGoToBookmarks = () => {
+        // 作成済みのBookmarkScreenへ移動
+        router.push('/screens/BookmarkScreen');
     };
 
     return (
@@ -45,6 +48,18 @@ export default function CampusSelectScreen() {
                 >
                     <Text style={styles.buttonText}>ナゴヤドーム前キャンパス</Text>
                 </TouchableOpacity>
+
+                {/* デザイン調整用の余白 */}
+                <View style={{ height: 30 }} />
+
+                {/* ▼▼▼ 追加：保存したお店を見るボタン ▼▼▼ */}
+                <TouchableOpacity
+                    style={styles.bookmarkButton} // スタイルを別に作成
+                    onPress={handleGoToBookmarks}
+                >
+                    <Text style={styles.bookmarkButtonText}>★ 保存したお店を見る</Text>
+                </TouchableOpacity>
+
             </View>
         </SafeAreaView>
     );
@@ -54,7 +69,7 @@ export default function CampusSelectScreen() {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1, //画面全体を使う
-        backgroundColor: '#F5F5F7', 
+        backgroundColor: '#FFFBEB', 
     },
     container: {
         flex: 1,
@@ -74,7 +89,7 @@ const styles = StyleSheet.create({
         marginBottom: 40, // ボタンとの間に大きめの余白
     },
     button: {
-        backgroundColor: '#00BFFFFF', // ボタンの背景色（Appleの標準的な青）
+        backgroundColor: '#f8a547ff', // ボタンの背景色
         paddingVertical: 15, // 上下の余白
         paddingHorizontal: 30, // 左右の余白
         borderRadius: 12, // 角を丸くする
@@ -95,5 +110,23 @@ const styles = StyleSheet.create({
         color: '#FFFFFF', // ボタンの文字色（白）
         fontSize: 18,
         fontWeight: '600',
+    },
+
+    // ▼▼▼ 追加したボタン用のスタイル ▼▼▼
+    bookmarkButton: {
+        backgroundColor: '#fff', // 背景は白
+        borderWidth: 2,          // 枠線をつける
+        borderColor: '#007AFF',  // 枠線（メインのオレンジと区別）
+        paddingVertical: 15,
+        paddingHorizontal: 30,
+        borderRadius: 12,
+        width: '90%',
+        alignItems: 'center',
+        marginBottom: 15,
+    },
+    bookmarkButtonText: {
+        color: '#007AFF', // 文字色
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });
