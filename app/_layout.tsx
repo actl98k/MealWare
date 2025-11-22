@@ -6,7 +6,7 @@ export default function RootLayout() {
       // アプリ全体のヘッダーのデフォルト設定
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#007AFF', // ヘッダーの背景色を青に
+          backgroundColor: '#f8a547ff', // ヘッダーの背景色
         },
         headerTintColor: '#FFFFFF', // タイトルや戻るボタンの色を白に
         headerTitleStyle: {
@@ -20,7 +20,6 @@ export default function RootLayout() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
       {/* 
-        修正ポイント
         一番最初の画面（app/index.tsx）に対する設定を追加しました。
       */}
 
@@ -30,7 +29,6 @@ export default function RootLayout() {
       />
 
       {/* 
-        修正ポイント:
         ファイルが "app/screens/〇〇/index.tsx" の場合、
         name に "/index" まで明記することで確実に紐づけます。
       */}
@@ -57,6 +55,10 @@ export default function RootLayout() {
       <Stack.Screen
         name="screens/ResultScreen/index"
         options={{ title: '診断結果' }}
+      />
+      <Stack.Screen
+        name="screens/BookmarkScreen/index"
+        options={{ title: '保存したお店リスト' }}
       />
     </Stack>
   );

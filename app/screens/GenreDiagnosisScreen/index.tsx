@@ -51,7 +51,7 @@ const GenreDiagnosisScreen = () => {
 };
 
 const styles = StyleSheet.create({
-    container: { flexGrow: 1, padding: 20, alignItems: 'center', backgroundColor: '#F5F5F7' },
+    container: { flexGrow: 1, padding: 20, alignItems: 'center', backgroundColor: '#FFFBEB' },
     title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20, color: '#333' },
     button: { backgroundColor: '#fff', padding: 12, borderRadius: 10, width: '90%', alignItems: 'center', marginBottom: 10, borderWidth: 1, borderColor: '#007AFF' },
     buttonText: { color: '#007AFF', fontSize: 16, fontWeight: '500' },

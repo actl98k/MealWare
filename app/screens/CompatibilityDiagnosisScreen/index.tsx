@@ -156,10 +156,10 @@ const CompatibilityDiagnosisScreen = () => {
 };
 
 const styles = StyleSheet.create({
-    wrapper: { flex: 1, backgroundColor: '#F5F5F7' },
+    wrapper: { flex: 1, backgroundColor: '#FFFBEB' },
     container: { padding: 20 },
     questionBox: {
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#ffffffff',
         borderRadius: 12,
         padding: 20,
         marginBottom: 15,
@@ -182,12 +182,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: '#007AFF',
+        borderColor: '#000000ff',
         width: '45%',
         alignItems: 'center',
     },
     optionButtonText: { color: '#007AFF', fontSize: 16 },
-    selectedOption: { backgroundColor: '#007AFF' },
+    selectedOption: { backgroundColor: '#f8a547ff' },
     selectedOptionText: { color: '#FFFFFF' },
     diagnoseButton: {
         backgroundColor: '#28a745',
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 20,
     },
-    diagnoseButtonText: { color: '#FFFFFF', fontSize: 18, fontWeight: 'bold' },
+    diagnoseButtonText: { color: '#ffffffff', fontSize: 18, fontWeight: 'bold' },
 });
 
 export default CompatibilityDiagnosisScreen;
