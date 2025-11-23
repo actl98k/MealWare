@@ -12,9 +12,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts",
-    "app/screens/CampusSelectScreen",
-    "app/screens/DiagnosisSelectScreen",
-    "app/screens/DiagnosisSelectScreen"
+    "expo-env.d.ts"
   ]
 }

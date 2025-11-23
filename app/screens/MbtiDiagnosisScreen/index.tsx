@@ -1,5 +1,5 @@
 // app/screens/MbtiDiagnosisScreen.tsx
-import { router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
@@ -16,6 +16,7 @@ const MbtiDiagnosisScreen = () => {
     //const router = useRouter();
     const { campus } = useLocalSearchParams<Params>();
 
+    const router = useRouter();
     const handleSelectMbti = (mbti: string) => {
         router.push({
             pathname: '/screens/ResultScreen',

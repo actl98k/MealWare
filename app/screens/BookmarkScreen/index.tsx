@@ -37,13 +37,13 @@ const BookmarkScreen = () => {
             "保存したお店をすべて削除しますか？",
             [
                 { text: "キャンセル", style: "cancel" },
-                { 
-                    text: "削除する", 
-                    style: "destructive", 
+                {
+                    text: "削除する",
+                    style: "destructive",
                     onPress: async () => {
                         await AsyncStorage.removeItem('favorite_restaurants');
                         setFavorites([]);
-                    } 
+                    }
                 }
             ]
         );
@@ -51,7 +51,7 @@ const BookmarkScreen = () => {
 
     // カード全体をTouchableOpacityにして、ResultScreenへ遷移させる
     const renderItem = ({ item }: { item: StoreData }) => (
-        <TouchableOpacity 
+        <TouchableOpacity
             style={styles.card}
             onPress={() => {
                 // 既存のResultScreenに「この店を表示して(targetStoreNo)」と指示を出して遷移
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     backText: { fontSize: 16, color: '#007AFF' },
     clearButton: { padding: 5 },
     clearText: { fontSize: 14, color: '#ff3b30' },
-    
+
     listContent: { padding: 15 },
     // ▼▼▼ タッチしたときにフィードバックがあるようカードスタイル調整 ▼▼▼
     card: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
 
     emptyContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
     emptyText: { color: '#888', fontSize: 16 },
-    
+
     clickHint: {
         marginTop: 10,
         textAlign: 'right',
