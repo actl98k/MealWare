@@ -1,4 +1,4 @@
-import { router, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -8,6 +8,7 @@ const DiagnosisSelectScreen = () => {
   //const router = useRouter();
   const { campus } = useLocalSearchParams<Params>();
 
+  const router = useRouter();
   const handleNavigate = (path: string) => {
     router.push({ pathname: path as any, params: { campus } });
   };
