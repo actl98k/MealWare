@@ -199,9 +199,12 @@ const ResultScreen = () => {
                     {mapUrl && (<InfoRow label="Googleマップで確認する" value="タップして開く" onPress={handleOpenGoogleMaps} />)}
                 </View>
 
+                {/* targetStoreNoが無い（＝診断から来た）時だけ表示する */}
+                {!targetStoreNo && (
                 <TouchableOpacity style={styles.favButton} onPress={saveToFavorites}>
                     <Text style={styles.favButtonText}>★ このお店を保存する</Text>
                 </TouchableOpacity>
+                )}
 
                 {/* 保存リスト画面から来た場合、さらにリストへ飛ぶボタンは不要かもしれないが、あってもバグにはならない */}
                 {!targetStoreNo && (
