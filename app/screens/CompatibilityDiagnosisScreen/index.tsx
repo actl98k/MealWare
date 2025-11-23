@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -30,7 +30,6 @@ const CompatibilityDiagnosisScreen = () => {
             photogenic: photogenic,
         };
 
-        const router = useRouter();
         router.push({
             pathname: '/screens/ResultScreen',
             params: {

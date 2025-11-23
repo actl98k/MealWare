@@ -1,5 +1,5 @@
 // app/screens/GenreDiagnosisScreen.tsx
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { fetchData } from '../../data/restaurantData';
@@ -8,7 +8,7 @@ import { StoreData } from '../../types';
 type Params = { campus: string };
 
 const GenreDiagnosisScreen = () => {
-    const router = useRouter();
+    //const router = useRouter();
     const { campus } = useLocalSearchParams<Params>();
     const [genres, setGenres] = useState<string[]>([]);
     const [loading, setLoading] = useState(true);
