@@ -2,9 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // Expo Router の画面遷移用
-import { router } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 export default function CampusSelectScreen() {
+    const router = useRouter();
     // キャンパスを押したときに diagnose 画面へ移動
     const handleSelectCampus = (campus: string) => {
         router.push({
@@ -69,7 +70,7 @@ export default function CampusSelectScreen() {
 const styles = StyleSheet.create({
     wrapper: {
         flex: 1, //画面全体を使う
-        backgroundColor: '#FFFBEB', 
+        backgroundColor: '#FFFBEB',
     },
     container: {
         flex: 1,
