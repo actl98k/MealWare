@@ -15,6 +15,7 @@ export interface StoreData {
     address: string;
     accessTime: string;
     mbtiType: string;
+    mbtiReason: string;
 }
 
 const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRAFVowStEnNWJlzv9gYXJzDKgJZjVVtmA3qui5er8Ngn6eGIx0Z7DtUnKS_i_uWzImWyn4Xqx9q_Iu/pub?output=csv';
@@ -50,6 +51,7 @@ export const fetchData = async (): Promise<StoreData[]> => {
                 address: row[11] || '',
                 accessTime: row[12] || '',
                 mbtiType: row[13] || '',
+                mbtiReason: row[14] || '',
             }));
 
         cachedData = jsonData;

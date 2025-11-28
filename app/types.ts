@@ -14,4 +14,5 @@ export type StoreData = {
     address: string;
     accessTime: string;
     mbtiType: string;
+    mbtiReason: string;
 };

@@ -190,6 +190,17 @@ const ResultScreen = () => {
 
                 <View style={styles.card}>
                     <Text style={styles.title}>{restaurant.storeName}</Text>
+
+                    {/* MBTI診断かつ、理由データがある場合のみ表示 */}
+                    {diagnosisType === 'mbti' && restaurant.mbtiReason ? (
+                        <View style={styles.reasonContainer}>
+                            <Text style={styles.reasonTitle}>MBTIタイプ</Text>
+                            <Text style={styles.reasonText}>
+                                {restaurant.mbtiReason}
+                            </Text>
+                        </View>
+                    ) : null}
+
                     <InfoRow label="ジャンル" value={restaurant.genre} />
                     <InfoRow label="予算目安" value={restaurant.budget} />
                     <InfoRow label="営業時間" value={restaurant.businessHours} />
@@ -254,6 +265,28 @@ const styles = StyleSheet.create({
     infoValue: { fontSize: 16, color: '#333', flex: 3, textAlign: 'right', fontWeight: '500' },
     infoValueContainer: { flex: 3, alignItems: 'flex-end' }, //URLリンクのタップ領域
     linkText: { color: '#007AFF', textDecorationLine: 'underline', fontWeight: 'bold' }, //URLリンクのテキストスタイル
+
+        reasonContainer: {
+        backgroundColor: '#FFFBEB', 
+        padding: 15,
+        borderRadius: 10,
+        marginBottom: 20,
+        borderWidth: 1,
+        borderColor: '#000000ff',
+    },
+    reasonTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#0056b3',
+        marginBottom: 8,
+        textAlign: 'center',
+    },
+    reasonText: {
+        fontSize: 15,
+        color: '#333',
+        lineHeight: 22,
+    },
+
     disclaimer: { textAlign: 'center', color: 'gray', fontSize: 12, padding: 10 },
     errorText: { fontSize: 18, color: '#d9534f', textAlign: 'center', marginBottom: 20, lineHeight: 25 },
     backButton: {
