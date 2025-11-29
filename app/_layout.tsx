@@ -25,7 +25,7 @@ export default function RootLayout() {
 
       <Stack.Screen 
         name="index" 
-        options={{ title: 'Mealware' }} 
+        options={{ title: 'HOME' }} 
       />
 
       {/* 
@@ -34,7 +34,7 @@ export default function RootLayout() {
       */}
       <Stack.Screen
         name="screens/CampusSelectScreen/index" 
-        options={{ title: 'Mealware' }}
+        options={{ title: 'HOME' }}
       />
       <Stack.Screen
         name="screens/DiagnosisSelectScreen/index"
