@@ -22,7 +22,7 @@ export default function CampusSelectScreen() {
     return (
         <SafeAreaView style={styles.wrapper}>
             <View style={styles.container}>
-                <Text style={styles.title}>Mealware(仮)</Text>
+                <Text style={styles.title}>一食一会</Text>
                 <Text style={styles.subtitle}>あなたの所属キャンパスを選択してください</Text>
 
                 {/* 天白ボタン */}

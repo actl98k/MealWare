@@ -1,7 +1,7 @@
 // app/screens/GenreDiagnosisScreen.tsx
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { fetchData } from '../../data/restaurantData';
 import { StoreData } from '../../types';
 
@@ -41,19 +41,36 @@ const GenreDiagnosisScreen = () => {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.title}>好きなジャンルを選んでください</Text>
+            <View style={styles.tagsContainer}>
             {genres.map((genre) => (
                 <TouchableOpacity key={genre} style={styles.button} onPress={() => handleSelectGenre(genre)}>
                     <Text style={styles.buttonText}>{genre}</Text>
                 </TouchableOpacity>
             ))}
+            </View>
         </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
-    container: { flexGrow: 1, padding: 20, alignItems: 'center', backgroundColor: '#FFFBEB' },
-    title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20, color: '#333' },
-    button: { backgroundColor: '#fff', padding: 12, borderRadius: 10, width: '90%', alignItems: 'center', marginBottom: 10, borderWidth: 1, borderColor: '#007AFF' },
+    container: { flexGrow: 1, padding: 20,  backgroundColor: '#FFFBEB' },
+    title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20, color: '#333' ,textAlign: 'center' },
+    tagsContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        width: '100%',
+    },
+        button: { 
+        backgroundColor: '#fff', 
+        paddingVertical: 12,
+        paddingHorizontal: 20,
+        borderRadius: 20,
+        margin: 6,
+        alignItems: 'center', 
+        borderWidth: 1, 
+        borderColor: '#007AFF' 
+    },
     buttonText: { color: '#007AFF', fontSize: 16, fontWeight: '500' },
 });
 
